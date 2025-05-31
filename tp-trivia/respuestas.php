@@ -1,5 +1,5 @@
 <?php
-// Diccionario con respuestas correctas
+
 $respuestas_correctas = [
     "1" => "Kurama",
     "2" => "Sasuke",
@@ -42,14 +42,14 @@ foreach ($respuestas_correctas as $pregunta => $correcta) {
                 } else {
                     $r1 = $r1 . "," . $valor;
                 }
-                $contador++;
+                $contador=$contador+1;
             }
 
             if ($r1 === $correcta) {
                 print '<div class="alert alert-success" role="alert">';
                 print "Pregunta $pregunta: Correcta";
                 print '</div>';
-                $puntos += 10;
+                $puntos = $puntos+ 10;
             } else {
                 print '<div class="alert alert-danger" role="alert">';
                 print "Pregunta $pregunta: Incorrecta. La respuesta correcta es $correcta";
@@ -67,7 +67,7 @@ foreach ($respuestas_correctas as $pregunta => $correcta) {
                 print '<div class="alert alert-success" role="alert">';
                 print "Pregunta $pregunta: Correcta";
                 print '</div>';
-                $puntos += 10;
+                 $puntos = $puntos+ 10;
             } else {
                 print '<div class="alert alert-danger" role="alert">';
                 print "Pregunta $pregunta: Incorrecta. La respuesta correcta es $correcta";
@@ -83,7 +83,7 @@ foreach ($respuestas_correctas as $pregunta => $correcta) {
 
 print "<br><strong>Total de puntos: $puntos</strong><br>";
 
-// Cálculo porcentaje correcto
+
 $total_preguntas = 20;
 $puntos_por_pregunta = 10;
 $total_puntos = $total_preguntas * $puntos_por_pregunta;
